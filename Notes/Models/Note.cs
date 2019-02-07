@@ -5,7 +5,7 @@ namespace Notes.Models
     public class Note
     {
         // Auto-implemented properties for trivial get and set
-        public string FileName { get; set; }
+        public string Filename { get; set; }
         public string Text { get; set; }
         public DateTime Date { get; set; }
     }
