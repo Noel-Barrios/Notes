@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,11 @@ namespace Notes
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // The FolderPath property is used to store the path on the device where note data will be stored.
+            FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+
+            // initialize the MainPage property to be a Navigation Page that hosts an instance of NotesPage
+            MainPage = new NavigationPage(new NotesPage());
         }
 
         protected override void OnStart()
